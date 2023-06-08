@@ -27,7 +27,7 @@
       </div>
     </template>
     <v-data-table-virtual
-      :headers="headers"
+      :headers="(headers as any)"
       :items="$store.squaresWithCount"
       item-value="name"
     />
