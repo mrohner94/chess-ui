@@ -9,8 +9,8 @@
       <v-list class="d-flex">
         <v-list-item
           prepend-avatar="http://placekitten.com/g/200/300"
-          title="Michael Rohner"
-          subtitle="mrohner320@gmail.com"
+          :title="width < 420 ? undefined : 'Michael Rohner'"
+          :subtitle="width < 420 ? undefined : 'mrohner320@gmail.com'"
         ></v-list-item>
         <v-spacer />
         <v-list-item v-if="mobile">
@@ -52,7 +52,7 @@ import { useAppStore } from "@/store/app";
 import { useRouter } from "vue-router";
 import { useDisplay } from "vuetify/lib/framework.mjs";
 
-const { mobile } = useDisplay();
+const { mobile, width } = useDisplay();
 const $store = useAppStore();
 const $router = useRouter();
 
