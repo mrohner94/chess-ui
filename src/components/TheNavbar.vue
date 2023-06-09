@@ -2,7 +2,7 @@
   <v-navigation-drawer
     :location="mobile ? 'bottom' : 'right'"
     class="bg-white"
-    :class="mobile ? 'h-25' : ''"
+    :class="mobile ? 'h-35' : ''"
     permanent
   >
     <template v-slot:prepend>
@@ -82,3 +82,9 @@ const onClickLogout = () => {
   $store.$reset();
 };
 </script>
+
+<style scoped>
+.h-35 {
+  height: 35% !important;
+}
+</style>
