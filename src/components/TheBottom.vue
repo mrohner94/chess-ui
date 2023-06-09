@@ -1,6 +1,6 @@
 <template>
   <v-footer class="pa-0">
-    <div class="w-100" :class="width < 420 ? 'mt-n12' : 'mt-n6'">
+    <div class="w-100 h-25" :class="width < 420 ? 'mt-n12' : 'mt-n6'">
       <div>
         <v-list class="d-flex">
           <v-list-item
