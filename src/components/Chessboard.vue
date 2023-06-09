@@ -1,17 +1,19 @@
 <template>
-  <div class="chessboard">
-    <div v-for="row in 8" :key="row" class="chessboard-row">
-      <div
-        v-for="column in 8"
-        :key="column"
-        :class="[
-          'chessboard-square',
-          { 'dark-square': isDarkSquare(row, column) },
-          { 'light-square': !isDarkSquare(row, column) },
-          { highlighted: isSquareHighlighted(row, column) },
-        ]"
-        @click="highlightSquare(row, column)"
-      ></div>
+  <div class="chess-container">
+    <div class="chessboard">
+      <div v-for="row in 8" :key="row" class="chessboard-row">
+        <div
+          v-for="column in 8"
+          :key="column"
+          :class="[
+            'chessboard-square',
+            { 'dark-square': isDarkSquare(row, column) },
+            { 'light-square': !isDarkSquare(row, column) },
+            { highlighted: isSquareHighlighted(row, column) },
+          ]"
+          @click="highlightSquare(row, column)"
+        ></div>
+      </div>
     </div>
   </div>
 </template>
@@ -37,34 +39,6 @@ const isSquareHighlighted = (row: number, column: number) => {
 };
 </script>
 
-<style scoped>
-.chessboard {
-  display: flex;
-  flex-direction: column;
-}
-
-.chessboard-row {
-  display: flex;
-}
-
-.chessboard-square {
-  width: 50px;
-  height: 50px;
-}
-
-.dark-square {
-  background-color: #b58863;
-}
-
-.light-square {
-  background-color: #f0d9b5;
-}
-
-.chessboard-square:hover {
-  background-color: #e0e0e0;
-}
-
-.chessboard-square.highlighted {
-  background-color: #add8e6;
-}
+<style lang="scss" scoped>
+@import "@/styles/chessboard.scss";
 </style>
