@@ -1,6 +1,15 @@
+<style scoped>
+.mt-mobile {
+  margin-top: -12rem !important;
+}
+.mt-side {
+  position: relative;
+  top: -100px;
+}
+</style>
 <template>
   <v-footer class="pa-0">
-    <div class="w-100 h-25" :class="width < 420 ? 'mt-n12' : 'mt-n6'">
+    <div class="w-100 h-25" :class="height > 560 ? 'mt-mobile' : 'mt-side'">
       <div>
         <v-list class="d-flex">
           <v-list-item
@@ -33,7 +42,7 @@ import { useAppStore } from "@/store/app";
 import { useRouter } from "vue-router";
 import { useDisplay } from "vuetify/lib/framework.mjs";
 
-const { width } = useDisplay();
+const { width, height } = useDisplay();
 const $store = useAppStore();
 const $router = useRouter();
 
